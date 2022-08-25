@@ -3,7 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/aidai/4month1hw/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/aidai/4month1hw/app/src/main/res/layout/fragment_board.xml" value="0.21693840579710144" />
         <entry key="..\:/Users/aidai/4month1hw/app/src/main/res/layout/fragment_profile.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/aidai/4month1hw/app/src/main/res/layout/item_board.xml" value="0.2" />
         <entry key="..\:/Users/aidai/4month1hw/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
       </map>
     </option>

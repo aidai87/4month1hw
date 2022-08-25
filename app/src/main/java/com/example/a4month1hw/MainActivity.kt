@@ -12,6 +12,7 @@ import com.example.a4month1hw.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private lateinit var prefs: Prefs
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,5 +32,10 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        prefs = Prefs(this);
+        if (!prefs.isBoardShown())
+            navController.navigate(R.id.boardFragment);
+
     }
 }
