@@ -32,4 +32,9 @@
         android:name="com.example.a4month1hw.ui.BoardFragment"
         android:label="fragment_board"
         tools:layout="@layout/fragment_board" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.a4month1hw.ui.home.NewsFragment"
+        android:label="fragment_news"
+        tools:layout="@layout/fragment_news" />
 </navigation>

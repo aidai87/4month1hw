@@ -8,32 +8,33 @@ import com.example.a4month1hw.databinding.ItemBoardBinding
 import com.example.a4month1hw.glide.GlideYu
 
 
-class BoardAdapter(private val data: ArrayList<Board>,  private var finishBoard: FinishBoard) : RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
-
+class BoardAdapter(private val data: ArrayList<Board>, private var finishBoard: FinishBoard) :
+    RecyclerView.Adapter<BoardAdapter.BoardViewHolder>() {
 
 
     fun setFinishBoard(finishBoard: FinishBoard) {
         this.finishBoard = finishBoard
     }
 
-   inner class BoardViewHolder(private  var binding : ItemBoardBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class BoardViewHolder(private var binding: ItemBoardBinding) :
+        RecyclerView.ViewHolder(binding.root) {
 
-       fun bind(position: Int) {
-binding.btnStart.setOnClickListener(){
-    finishBoard.clickm()
-}
-           val board: Board = data[position]
-           binding.textTitle.text = board.title
-           binding.textInfo.text = board.titleDesc
-           board.image?.let { binding.ivBoard.GlideYu(it) }
-           if(position == 2){
-               binding.btnStart.visibility = View.VISIBLE
-           }else{
-               binding.btnStart.visibility = View.GONE
-           }
-       }
+        fun bind(position: Int) {
+            binding.btnStart.setOnClickListener() {
+                finishBoard.clickm()
+            }
+            val board: Board = data[position]
+            binding.textTitle.text = board.title
+            binding.textInfo.text = board.titleDesc
+            board.image?.let { binding.ivBoard.setAnimation(it) }
+            if (position == 2) {
+                binding.btnStart.visibility = View.VISIBLE
+            } else {
+                binding.btnStart.visibility = View.GONE
+            }
+        }
 
-   }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BoardViewHolder {
         return BoardViewHolder(
@@ -46,12 +47,12 @@ binding.btnStart.setOnClickListener(){
     }
 
     override fun onBindViewHolder(holder: BoardViewHolder, position: Int) {
-holder.bind(position)
+        holder.bind(position)
     }
 
     override fun getItemCount(): Int = 3
 
-    interface FinishBoard{
+    interface FinishBoard {
         fun clickm()
     }
 

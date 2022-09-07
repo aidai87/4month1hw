@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.a4month1hw.Prefs
+import com.example.a4month1hw.R
 import com.example.a4month1hw.databinding.FragmentBoardBinding
 
 
@@ -29,9 +30,9 @@ class BoardFragment : Fragment(), BoardAdapter.FinishBoard {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         data.apply {
-            add(Board("Привет", "Как дела?", "https://proprikol.ru/wp-content/uploads/2020/08/kartinki-informatika-17.jpg"))
-            add(Board("World", "What's up?", "https://proprikol.ru/wp-content/uploads/2020/08/kartinki-informatika-17.jpg"))
-            add(Board("Hello", "How are you?","https://proprikol.ru/wp-content/uploads/2020/08/kartinki-informatika-17.jpg"))
+            add(Board("Привет", "Как дела?", R.raw.board3))
+            add(Board("World", "What's up?", R.raw.board2))
+            add(Board("Hello", "How are you?", R.raw.board1))
         }
         boardAdapter = BoardAdapter(data, this)
         binding.viewPager.adapter = boardAdapter
