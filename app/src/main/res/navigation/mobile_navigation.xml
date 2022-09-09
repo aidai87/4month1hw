@@ -37,4 +37,9 @@
         android:name="com.example.a4month1hw.ui.home.NewsFragment"
         android:label="fragment_news"
         tools:layout="@layout/fragment_news" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.a4month1hw.auth.AuthFragment"
+        android:label="fragment_auth"
+        tools:layout="@layout/fragment_auth" />
 </navigation>

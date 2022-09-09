@@ -26,7 +26,7 @@ class NewsFragment : Fragment() {
 
             if (binding.editText.text != null) {
                 val text = binding.editText.text
-                val news = News( text.toString(), System.currentTimeMillis())
+                val news = News(0, text.toString(), System.currentTimeMillis())
                 val bundle = bundleOf("news" to news)
                 parentFragmentManager.setFragmentResult("rk_news", bundle)
                 findNavController().navigateUp()

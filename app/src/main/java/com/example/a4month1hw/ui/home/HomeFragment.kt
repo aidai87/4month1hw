@@ -15,7 +15,7 @@ import com.example.a4month1hw.databinding.FragmentHomeBinding
 class HomeFragment : Fragment() {
 
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var adapter: NewsAdapter
+    private var adapter = NewsAdapter()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,7 +32,6 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapter = NewsAdapter()
         binding.fab.setOnClickListener {
             findNavController().navigate(R.id.newsFragment)
         }
@@ -43,8 +42,9 @@ class HomeFragment : Fragment() {
         ) { _, bundle ->
             val news = bundle.getSerializable("news") as News
             adapter.addItem(news)
-            binding.recyclerview.adapter = adapter
         }
+
+        binding.recyclerview.adapter = adapter
         adapter.onLongClick = { pos ->
             val alertDialog = AlertDialog.Builder(requireContext())
             alertDialog.setTitle("Delete item")

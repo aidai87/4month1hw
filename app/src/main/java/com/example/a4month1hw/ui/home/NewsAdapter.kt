@@ -29,7 +29,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.NewsViewHolder>() {
 
     override fun getItemCount(): Int = data.size
     fun addItem(news: News) {
-        data.add(news)
+        data.add(0,news)
 
     }
 

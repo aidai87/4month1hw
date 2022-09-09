@@ -9,6 +9,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.a4month1hw.databinding.ActivityMainBinding
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 
 class MainActivity : AppCompatActivity() {
 
@@ -33,6 +35,10 @@ class MainActivity : AppCompatActivity() {
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+
+        if (Firebase.auth.currentUser == null){
+            navController.navigate(R.id.authFragment)
+        }
 
         navController.addOnDestinationChangedListener { controller, destination, arguments ->
             val fragment = arrayListOf(
